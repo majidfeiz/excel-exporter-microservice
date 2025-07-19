@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  excel-export-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: excel-export-service
+    env_file:
+      - .env
+    ports:
+      - "8096:8000"
+    restart: unless-stopped
